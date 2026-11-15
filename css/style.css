@@ -1,0 +1,170 @@
+/* Horizon Jets v2 — premium charter-brokerage design
+   Dark navy + restrained gold. System fonts only (fast, no webfonts).
+   Mobile-first. */
+:root{
+  --navy:#0a1628; --navy2:#0e1f3a; --navy3:#132a4a; --gold:#c9a227; --gold2:#e3c766;
+  --ink:#e8ecf1; --muted:#9aa8bd; --line:#22344f; --card:#101f36; --white:#f5f7fa;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);background:var(--navy);color:var(--ink);line-height:1.6;font-size:16px}
+a{color:var(--gold2)}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.25;color:var(--white)}
+h1{font-size:2rem;margin:.2em 0 .4em}
+h2{font-size:1.55rem;margin:1.6em 0 .5em}
+h3{font-size:1.2rem;margin:1.3em 0 .4em}
+p{margin:.6em 0}
+.wrap{max-width:1120px;margin:0 auto;padding:0 18px}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;color:var(--gold);font-weight:700;margin:0 0 .4em}
+.lede{font-size:1.12rem;color:#cdd6e4}
+.small{font-size:.88rem;color:var(--muted)}
+.rule{border:0;border-top:1px solid var(--line);margin:2em 0}
+
+/* Header + nav */
+header.site{position:sticky;top:0;z-index:50;background:rgba(10,22,40,.97);border-bottom:1px solid var(--line)}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--white)}
+.brand-mark{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--serif);font-size:1.15rem}
+.brand-name{font-family:var(--serif);font-size:1.25rem;letter-spacing:.04em;line-height:1}
+.brand-sub{display:block;font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:3px}
+.nav-toggle{display:inline-block;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:8px 12px;font-size:1rem;cursor:pointer}
+nav.main{display:none;padding-bottom:12px}
+nav.main.open{display:block}
+nav.main ul{list-style:none;margin:0;padding:0}
+nav.main li{border-top:1px solid var(--line)}
+nav.main a{display:block;padding:11px 4px;color:var(--ink);text-decoration:none;font-size:.98rem}
+nav.main a:hover,nav.main a[aria-current="page"]{color:var(--gold2)}
+nav.main a.cta{color:var(--gold2);font-weight:700}
+@media(min-width:900px){
+  .nav-toggle{display:none}
+  nav.main{display:block;padding-bottom:0}
+  nav.main ul{display:flex;gap:4px;align-items:center}
+  nav.main li{border-top:0}
+  nav.main a{padding:8px 10px}
+  .navrow{flex-wrap:nowrap}
+}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--gold);color:#0a1628;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:6px;border:1px solid var(--gold);cursor:pointer;font-size:.98rem}
+.btn:hover{background:var(--gold2);border-color:var(--gold2)}
+.btn-ghost{background:transparent;color:var(--gold2);border:1px solid var(--gold)}
+.btn-ghost:hover{background:rgba(201,162,39,.12)}
+.btn-sm{padding:8px 14px;font-size:.88rem}
+
+/* Hero */
+.hero{padding:44px 0 34px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#0d1f3a 0%,#0a1628 100%)}
+.hero h1{font-size:2.3rem}
+.hero .lede{max-width:640px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.disclosure{margin-top:22px;padding:12px 14px;border-left:3px solid var(--gold);background:rgba(201,162,39,.08);font-size:.9rem;color:#cdd6e4;max-width:760px}
+@media(min-width:700px){.hero h1{font-size:2.9rem}}
+
+/* Sections + cards */
+section.block{padding:30px 0}
+.grid2{display:grid;gap:18px}
+@media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.card h3{margin-top:0}
+.step-num{font-family:var(--serif);font-size:2rem;color:var(--gold);line-height:1}
+table.data{width:100%;border-collapse:collapse;margin:14px 0;font-size:.94rem}
+table.data th,table.data td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.data th{color:var(--gold);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+.table-scroll{overflow-x:auto}
+.checklist{list-style:none;padding:0}
+.checklist li{padding:6px 0 6px 26px;position:relative}
+.checklist li::before{content:"✓";position:absolute;left:2px;color:var(--gold);font-weight:700}
+.xlist{list-style:none;padding:0}
+.xlist li{padding:6px 0 6px 26px;position:relative}
+.xlist li::before{content:"—";position:absolute;left:2px;color:var(--muted)}
+.faq-item{border-bottom:1px solid var(--line);padding:6px 0}
+.faq-item h3{font-size:1.08rem}
+.callout{background:var(--navy2);border:1px solid var(--line);border-radius:10px;padding:22px;margin:26px 0;text-align:center}
+.callout h2{margin-top:0}
+
+/* Aircraft comparison */
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0}
+.toolbar input[type="search"],.toolbar select{padding:10px 12px;border-radius:6px;border:1px solid var(--line);background:var(--navy2);color:var(--ink);font-size:.95rem}
+.toolbar input[type="search"]{flex:1 1 200px}
+.cat-filters{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+.cat-btn{padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-size:.9rem}
+.cat-btn.active{background:var(--gold);color:#0a1628;border-color:var(--gold);font-weight:700}
+.count-line{color:var(--muted);font-size:.92rem;margin:8px 0 16px}
+.ac-grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media(min-width:620px){.ac-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.ac-grid{grid-template-columns:1fr 1fr 1fr}}
+.ac-card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.ac-card img{width:100%;height:180px;object-fit:cover;background:#16283f}
+.ac-body{padding:16px;display:flex;flex-direction:column;flex:1}
+.ac-body h3{margin:0 0 2px;font-size:1.15rem}
+.ac-body h3 a{color:var(--white);text-decoration:none}
+.ac-body h3 a:hover{color:var(--gold2);text-decoration:underline}
+.ac-cat{color:var(--gold);font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.ac-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin:12px 0;font-size:.9rem}
+.ac-specs div{border-top:1px solid var(--line);padding-top:6px}
+.ac-specs .k{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+.ac-rate{font-size:1.05rem;font-weight:700;color:var(--white)}
+.ac-actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:10px}
+.ac-detail{display:none;border-top:1px solid var(--line);margin-top:12px;padding-top:12px;font-size:.92rem}
+.ac-detail.open{display:block}
+.ac-detail table{width:100%;border-collapse:collapse}
+.ac-detail td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+.ac-detail td:first-child{color:var(--muted);width:45%}
+.compare-check{display:flex;align-items:center;gap:6px;font-size:.9rem;cursor:pointer}
+.compare-check input{width:18px;height:18px;accent-color:var(--gold)}
+.compare-tray{position:fixed;left:0;right:0;bottom:0;background:var(--navy2);border-top:2px solid var(--gold);padding:12px 18px;display:none;z-index:60;box-shadow:0 -6px 24px rgba(0,0,0,.4)}
+.compare-tray.show{display:block}
+.compare-tray .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.compare-panel{display:none;margin:20px 0}
+.compare-panel.show{display:block}
+body.has-tray{padding-bottom:86px}
+
+/* Range map */
+.map-box{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#0e1f3a}
+#range-map{height:420px;width:100%;background:#0e1f3a}
+.map-fallback{padding:22px;text-align:center;color:var(--muted)}
+.route-form{display:grid;gap:12px;margin:14px 0}
+@media(min-width:700px){.route-form{grid-template-columns:1fr 1fr auto;align-items:end}}
+.route-result{margin:14px 0;padding:14px 16px;background:var(--navy2);border:1px solid var(--line);border-radius:8px}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:.88rem;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.ring-sample{width:26px;height:12px;border:2px solid #e3c766;border-radius:50%;display:inline-block}
+.line-sample{width:26px;height:0;border-top:3px solid #4da3ff;display:inline-block}
+
+/* Forms */
+form.hj label{display:block;font-weight:600;margin:14px 0 5px;font-size:.94rem}
+form.hj input,form.hj select,form.hj textarea{width:100%;padding:11px 12px;border-radius:6px;border:1px solid var(--line);background:var(--navy2);color:var(--ink);font-size:1rem;font-family:var(--sans)}
+form.hj input:focus,form.hj select:focus,form.hj textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+form.hj .req{color:var(--gold2)}
+.form-row{display:grid;gap:0 16px}
+@media(min-width:700px){.form-row.two{grid-template-columns:1fr 1fr}}
+.form-note{font-size:.88rem;color:var(--muted);margin-top:8px}
+.form-result{display:none;margin-top:18px;padding:16px;background:var(--navy2);border:1px solid var(--gold);border-radius:8px}
+.form-result.show{display:block}
+.form-result pre{white-space:pre-wrap;font-family:var(--sans);font-size:.92rem;margin:10px 0}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:40px;padding:30px 0 40px;background:#081120}
+footer.site .foot-grid{display:grid;gap:22px}
+@media(min-width:760px){footer.site .foot-grid{grid-template-columns:2fr 1fr 1fr}}
+footer.site h4{color:var(--gold);font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 10px}
+footer.site ul{list-style:none;margin:0;padding:0}
+footer.site li{margin:5px 0}
+footer.site a{color:var(--ink);text-decoration:none}
+footer.site a:hover{color:var(--gold2)}
+.foot-legal{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+
+/* Aircraft detail pages */
+.ac-detail-hero{display:grid;gap:24px;margin:24px 0}
+@media(min-width:820px){.ac-detail-hero{grid-template-columns:1.25fr 1fr}}
+.ac-photo img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line)}
+.ac-photo figcaption{color:var(--muted);font-size:.9rem;margin-top:6px}
+.spec-table{width:100%;border-collapse:collapse;font-size:.98rem}
+.spec-table th,.spec-table td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.spec-table th{color:var(--muted);font-weight:600;width:42%}
+.spec-table td{color:var(--white)}
+.breadcrumb{color:var(--muted);font-size:.9rem;margin:0 0 8px}
+.breadcrumb a{color:var(--gold2)}
